@@ -3,7 +3,7 @@ const app = express();
 
 const movies = require("./movies");
 
-
+const port = process.env.PORT || 3000;
 app.use(express.json());
 
 // sayfamıza gelen istekleri aldıgımız fonk
@@ -32,6 +32,6 @@ app.post("/movies/add", (req, res) => {
 });
 
 
-app.listen(3000, () => {
-    console.log("Server is running on 3000 port");
+app.listen(port, () => {
+    console.log("Server is running on " + port + " port");
 });
