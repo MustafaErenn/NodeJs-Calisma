@@ -6,9 +6,15 @@ const movies = require("./movies");
 const port = process.env.PORT || 3000;
 app.use(express.json());
 
-// sayfamıza gelen istekleri aldıgımız fonk
 app.get("/", (req, res) => {
-    res.send("<h1>Ana sayfa</h1>");
+
+    const baslik = "<h1>Routes</h1>\n";
+    const get = "<p>GET  /movies -&gt; Kayıtlı Filmleri Getirir</p>\n";
+    const get2 = "<p>GET  /movies/:id -&gt; Girilen id'li filmi getirir</p>\n";
+    const post = "<p>POST  /movies/add -&gt; Film kaydeder.</p>\n";
+
+    const result = baslik + get + get2 + post;
+    res.send(result);
 });
 
 
